@@ -84,10 +84,8 @@ async def async_setup_platform(hass,
 
         for nest_water_heater in _waterheaters:
             if mode:
-                _LOGGER.info('HW boost mode on time ending: {}'.format(timeToEnd))
                 nest_water_heater.turn_boost_mode_on(timeToEnd)
             else:
-                _LOGGER.info('HW boost off')
                 nest_water_heater.turn_boost_mode_off()
 
     hass.services.async_register(
