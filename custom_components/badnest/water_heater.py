@@ -96,7 +96,7 @@ async def async_setup_platform(hass,
     )
 
 
-class NestWaterHeater(WaterHeaterDevice):
+class NestWaterHeater(WaterHeaterEntity):
     """Representation of a Nest water heater device."""
 
     def __init__(self, device_id, api):
