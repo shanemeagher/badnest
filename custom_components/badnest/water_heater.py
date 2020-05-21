@@ -11,7 +11,6 @@ from homeassistant.const import (
     ATTR_ENTITY_ID,
 )
 from homeassistant.components.water_heater import (
-    WaterHeaterDevice,
     SCAN_INTERVAL,
     STATE_OFF,
     STATE_ON,
@@ -22,6 +21,11 @@ from homeassistant.components.water_heater import (
     ATTR_OPERATION_MODE,
     ATTR_OPERATION_LIST,
 )
+try:
+    from homeassistant.components.water_heater import WaterHeaterEntity
+except ImportError:
+    from homeassistant.components.water_heater import WaterHeaterDevice as WaterHeaterEntity
+
 from .const import (
     DOMAIN,
 )
